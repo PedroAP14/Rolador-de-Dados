@@ -23,7 +23,6 @@
             <Picker 
                  x:Name="LadoDadoPicker"
                  Title=""
-                 HorizontalOptions="Center"
                  FontSize="20">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
