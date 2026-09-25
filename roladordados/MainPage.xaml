@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="roladordados.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label
+                Text="ROLADOR DE DADOS"
+                FontSize="30"
+                HorizontalOptions="Center"
+                FontAttributes="Bold"/>
+
+            <Image
+                 x:Name="ImagemDado"
+                 Source="dado.png"
+                 HeightRequest="185"
+                 Aspect="AspectFit" />
+
+            <Picker 
+                 x:Name="LadoDadoPicker"
+                 Title=""
+                 HorizontalOptions="Center"
+                 FontSize="20">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>4</x:String>
+                        <x:String>6</x:String>
+                        <x:String>8</x:String>
+                        <x:String>10</x:String>
+                        <x:String>12</x:String>
+                        <x:String>20</x:String>
+                        <x:String>100</x:String>
+                </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label
+            x:Name="DadoRespostaLabel"
+            Text=""
+            HorizontalOptions="Center"
+            FontSize="30"/>
+
+            <Button
+                x:Name="RolarDadoButton"
+                Text="Rolar o Dado" 
+                FontSize="20"
+                BackgroundColor="Grey"
+                Clicked="RolarDadoButton_Clicked"
+                HorizontalOptions="Fill" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
