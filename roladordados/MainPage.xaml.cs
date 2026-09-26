@@ -12,61 +12,87 @@
 
         private void RolarDadoButton_Clicked(object sender, EventArgs e)
         {
-            if(LadoDadoPicker.SelectedIndex != -1)
+            DadoRespostaLabel.TextColor = Microsoft.Maui.Graphics.Colors.Black;
+            switch (LadoDadoPicker.SelectedIndex)
             {
-                DadoRespostaLabel.TextColor = Microsoft.Maui.Graphics.Colors.Black;
-
-                if (LadoDadoPicker.SelectedIndex == 0)
-                {
-                    dado = aleatorio.Next(1,5);
+                case 0:
+                    dado = aleatorio.Next(1, 5);
                     DadoRespostaLabel.Text = $"{dado}";
-                    ImagemDado.Source = "d4.PNG";
-                }
-                else if (LadoDadoPicker.SelectedIndex == 1)
-                {
+                    break;
+
+                case 1:
                     dado = aleatorio.Next(1, 7);
                     DadoRespostaLabel.Text = $"{dado}";
-                    ImagemDado.Source = "d6.PNG";
-                }
-                else if (LadoDadoPicker.SelectedIndex == 2)
-                {
+                    break;
+
+                case 2:
                     dado = aleatorio.Next(1, 9);
                     DadoRespostaLabel.Text = $"{dado}";
-                    ImagemDado.Source = "d8.PNG";
-                }
-                else if (LadoDadoPicker.SelectedIndex == 3)
-                {
+                    break;
+
+                case 3:
                     dado = aleatorio.Next(1, 11);
                     DadoRespostaLabel.Text = $"{dado}";
-                    ImagemDado.Source = "d10.PNG";
-                }
-                else if (LadoDadoPicker.SelectedIndex == 4)
-                {
+                    break;
+
+                case 4:
                     dado = aleatorio.Next(1, 13);
                     DadoRespostaLabel.Text = $"{dado}";
-                    ImagemDado.Source = "d12.PNG";
-                }
-                else if (LadoDadoPicker.SelectedIndex == 5)
-                {
+                    break;
+
+                case 5:
                     dado = aleatorio.Next(1, 21);
                     DadoRespostaLabel.Text = $"{dado}";
-                    ImagemDado.Source = "d20.PNG";
-                }
-                else if (LadoDadoPicker.SelectedIndex == 6)
-                {
+                    break;
+
+                case 6:
                     dado = aleatorio.Next(1, 101);
                     DadoRespostaLabel.Text = $"{dado}";
-                    ImagemDado.Source = "d100.PNG";
-                }
+                    break;
 
+                default:
+                    DadoRespostaLabel.Text = "Escolha um tipo de Dado!!!";
+                    DadoRespostaLabel.TextColor = Microsoft.Maui.Graphics.Colors.Red;
+                    break;
             }
-            else
+        }
+
+        private void LadoDadoPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (LadoDadoPicker.SelectedIndex)
             {
-                DadoRespostaLabel.Text = "Escolha um tipo de Dado!!!";
-                DadoRespostaLabel.TextColor = Microsoft.Maui.Graphics.Colors.Red;
-                ImagemDado.Source = "dado.PNG";
-            }
+                case 0:
+                    ImagemDado.Source = "d4.PNG";
+                    break;
 
+                case 1:
+                    ImagemDado.Source = "d6.PNG";
+                    break;
+
+                case 2:
+                    ImagemDado.Source = "d8.PNG";
+                    break;
+
+                case 3:
+                    ImagemDado.Source = "d10.PNG";
+                    break;
+
+                case 4:
+                    ImagemDado.Source = "d12.PNG";
+                    break;
+
+                case 5:
+                    ImagemDado.Source = "d20.PNG";
+                    break;
+
+                case 6:
+                    ImagemDado.Source = "d100.PNG";
+                    break;
+
+                default:
+                    ImagemDado.Source = "dado.PNG";
+                    break;
+            }            
         }
     }
 }

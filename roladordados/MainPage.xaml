@@ -22,8 +22,9 @@
 
             <Picker 
                  x:Name="LadoDadoPicker"
-                 Title=""
-                 FontSize="20">
+                 Title=""                 
+                 FontSize="20"
+                 SelectedIndexChanged="LadoDadoPicker_SelectedIndexChanged">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>4</x:String>
@@ -50,6 +51,7 @@
                 BackgroundColor="Grey"
                 Clicked="RolarDadoButton_Clicked"
                 HorizontalOptions="Fill" />
+
         </VerticalStackLayout>
     </ScrollView>
 
